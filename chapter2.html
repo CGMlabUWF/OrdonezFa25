@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Data and Methods – Comparing False Crawls and Pseudo-Absence Points when Modeling Sea Turtle Nesting on Pensacola Beach</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter3.html" rel="next">
+<link href="./chapter1.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter2.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data and Methods</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Comparing False Crawls and Pseudo-Absence Points when Modeling Sea Turtle Nesting on Pensacola Beach</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abstract</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data and Methods</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conclusions</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#data-description" id="toc-data-description" class="nav-link active" data-scroll-target="#data-description"><span class="header-section-number">2.1</span> Data Description</a></li>
+  <li><a href="#statistical-methods" id="toc-statistical-methods" class="nav-link" data-scroll-target="#statistical-methods"><span class="header-section-number">2.2</span> Statistical Methods</a>
+  <ul class="collapse">
+  <li><a href="#binary-logistic-regression" id="toc-binary-logistic-regression" class="nav-link" data-scroll-target="#binary-logistic-regression"><span class="header-section-number">2.2.1</span> Binary Logistic Regression</a></li>
+  <li><a href="#multinomial-logistic-regression" id="toc-multinomial-logistic-regression" class="nav-link" data-scroll-target="#multinomial-logistic-regression"><span class="header-section-number">2.2.2</span> Multinomial Logistic Regression</a></li>
+  <li><a href="#model-comparison" id="toc-model-comparison" class="nav-link" data-scroll-target="#model-comparison"><span class="header-section-number">2.2.3</span> Model Comparison</a></li>
+  <li><a href="#current-analysis" id="toc-current-analysis" class="nav-link" data-scroll-target="#current-analysis"><span class="header-section-number">2.2.4</span> Current Analysis</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">2.3</span> Results</a>
+  <ul class="collapse">
+  <li><a href="#estimated-models" id="toc-estimated-models" class="nav-link" data-scroll-target="#estimated-models"><span class="header-section-number">2.3.1</span> Estimated Models</a></li>
+  <li><a href="#classification" id="toc-classification" class="nav-link" data-scroll-target="#classification"><span class="header-section-number">2.3.2</span> Classification</a></li>
+  <li><a href="#model-comparison-1" id="toc-model-comparison-1" class="nav-link" data-scroll-target="#model-comparison-1"><span class="header-section-number">2.3.3</span> Model Comparison</a></li>
+  <li><a href="#model-visualization" id="toc-model-visualization" class="nav-link" data-scroll-target="#model-visualization"><span class="header-section-number">2.3.4</span> Model Visualization</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Data and Methods</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="data-description" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="data-description"><span class="header-section-number">2.1</span> Data Description</h2>
+<p>The data used for this study has a categorical outcome for nest type in which the possible outcomes are as follows:</p>
+<p><span class="math display">\[
+\text{Nest Type} = \begin{cases}
+      \text{P} &amp; \text{Presence} \\
+      \text{PA} &amp; \text{Pseudo Absence} \\
+      \text{FC} &amp; \text{False Crawl}
+   \end{cases}
+\]</span></p>
+<p>As mentioned in the previous chapter, the presence and false crawl data were human observed while the false crawl data was computer generated. For presence, the locations were recorded by a FWC employee on “turtle patrol” and drove the beach, noticing the presence of a nest. The false crawl data was also recorded by a FWC employee who noticed turtle tracks leading up the beach to no nest with a turn around point, leading back to the water. The pseudo absence data was randomly generated using ArcGIS by defining a border around an existing nest, then randomly selecting from these “no known nest” areas.</p>
+<!-- PLEASE INSERT THE BEACH PHOTO YOU USED FOR YOUR PRESENTATION -- MAKE SURE TO CITE IT -->
+<p>Beach slope and foreshore slope are continuous predictors calculated based on values for the given location. Beach slope (deg.) is measured from the mean low water line (MLWL) to the mean high water line (MHWL). Foreshore slope (deg.) is measured from the mean high water line (MHWL) to the potential for vegetation. For either slope, a larger value indicates a steeper slope, while a smaller value indicates a flatter slope.</p>
+</section>
+<section id="statistical-methods" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="statistical-methods"><span class="header-section-number">2.2</span> Statistical Methods</h2>
+<section id="binary-logistic-regression" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="binary-logistic-regression"><span class="header-section-number">2.2.1</span> Binary Logistic Regression</h3>
+<p>Binary logistic regression is used to predict the probability of an outcome when there are only two possible outcomes <span class="citation" data-cites="Kutner2004 Agresti2007 James2013 Agresti2015">(<a href="references.html#ref-Kutner2004" role="doc-biblioref">1</a>–<a href="references.html#ref-Agresti2015" role="doc-biblioref">4</a>)</span>. For our purposes, we used binary logistic regression to predict the probability of a nest being present (1) or not (0). Our outcomes were either that a detected nest was present (P), or there was not a nest detected (PA or FC). In order to model binary outcomes using logistic regression, the model will have the following form <span class="citation" data-cites="Kutner2004 Agresti2015">(<a href="references.html#ref-Kutner2004" role="doc-biblioref">1</a>,<a href="references.html#ref-Agresti2015" role="doc-biblioref">4</a>)</span>:</p>
+<p><span id="eq-bin-model"><span class="math display">\[
+\ln \left( \frac{\hat\pi}{1-\hat\pi} \right) = \hat\beta_0 + \hat\beta_1 x_1 + ... + \hat\beta_k x_k,
+\tag{2.1}\]</span></span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(\pi = P[Y = 1]\)</span> is the probability of the outcome or event,</li>
+<li><span class="math inline">\(\beta_0\)</span> is the <span class="math inline">\(y\)</span>-intercept,</li>
+<li><span class="math inline">\(\beta_i\)</span> is the slope of the <span class="math inline">\(i\)</span> predictor,</li>
+<li><span class="math inline">\(x_i\)</span> is the value of the <span class="math inline">\(i\)</span> predictor, and</li>
+<li><span class="math inline">\(k\)</span> is the number of predictors in the model.</li>
+</ul>
+<p><a href="#eq-bin-model" class="quarto-xref">Equation&nbsp;<span>2.1</span></a> gives the log-odds of the outcome (observed nest). In order to interpret the regression coefficients (<span class="math inline">\(\hat{\beta}_i\)</span>), we must exponentiate. This allows us to interpret the odds directly, rather than the log-odds. The odds ratio, or the exponentiation of the slope, for the <span class="math inline">\(i^{\text{th}}\)</span> predictor is:</p>
+<p><span id="eq-bin-or"><span class="math display">\[
+\text{OR}_i = e^{\hat{\beta}_i}.
+\tag{2.2}\]</span></span></p>
+<!-- NOTE - ORIGINALLY YOU DISCUSSED PROBABILITIES - WHEN WE EXPONENTIATE
+     WE ARE CONVERTING TO ODDS RATIOS - WE HAVE TO GO FURTHER IF WE WANT TO 
+     COMPUTE CORRESPONDING PROBABILITIES -->
+<p>Applying <a href="#eq-bin-or" class="quarto-xref">Equation&nbsp;<span>2.2</span></a> to the <span class="math inline">\(y\)</span>-intercept (<span class="math inline">\(\exp\{\hat\beta_0\}\)</span>) gives the baseline odds for a turtle to nest. In other words, this is the odds ratio of a nest ocurring at a given location if all predictors are 0; in this project, that means both beach slope and foreshore slope are flat.</p>
+<p>Usually we are interested in comparing <span class="math inline">\(\beta_i\)</span> against 0 – if a slope is 0, then the predictor has no effect on the outcome as the slope of the line is flat. When dealing with odds ratios, that means we are comparing against <span class="math inline">\(1\)</span>. If <span class="math inline">\(\exp\{\hat\beta_i\} &lt; 1\)</span>, the predictor has a negative effect on outcome. If <span class="math inline">\(\exp\{\hat\beta_i\} = 1\)</span>, the predictor is not related to the outcome. If <span class="math inline">\(\exp\{\hat\beta_i\} &gt; 1\)</span>, the predictor has a positive effect on the odds of the outcome.</p>
+<p>Interpretations for odds ratios are multiplicative. For continuous predictors, we provide the following interpretations for odds ratios: for every 1 unit increase in the predictor, the odds of our outcome are multiplied by <span class="math inline">\(\exp\{\hat\beta_i\}\)</span>.</p>
+<p>To test for the significance of our predictors, we use the Wald <span class="math inline">\(z\)</span> <span class="citation" data-cites="Kutner2004 Agresti2015">(<a href="references.html#ref-Kutner2004" role="doc-biblioref">1</a>,<a href="references.html#ref-Agresti2015" role="doc-biblioref">4</a>)</span>. The hypotheses are as follows:</p>
+<ul>
+<li><span class="math inline">\(H_0: \hat\beta_i = 0\)</span></li>
+<li><span class="math inline">\(H_\text{A}: \hat\beta_i \neq 0\)</span></li>
+</ul>
+<p>The null hypothesis, <span class="math inline">\(H_0\)</span>, suggests the slope of the probability of the predictor is 0, or flat. The alternative hypothesis, <span class="math inline">\(H_\text{A}\)</span>, indicates the slope of the probability of the predictor is not equal to 0. In order for the predictor to be significant, we need to have reason to reject the null hypothesis and conclude the slope is not equal to 0, or not flat.</p>
+<p>Once we have established our hypotheses, we then calculate the test statistic using the following formula <span class="citation" data-cites="Kutner2004 Agresti2015">(<a href="references.html#ref-Kutner2004" role="doc-biblioref">1</a>,<a href="references.html#ref-Agresti2015" role="doc-biblioref">4</a>)</span>:</p>
+<p><span id="eq-bin-z"><span class="math display">\[
+z_0 = \frac{\hat\beta_i}{\text{SE}_{\beta_i}} ,
+\tag{2.3}\]</span></span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(\hat\beta_i\)</span> is the slope of the <span class="math inline">\(i\)</span> predictor, and</li>
+<li><span class="math inline">\(\text{SE}_{\beta_i}\)</span> is the standard error of <span class="math inline">\(\beta_i\)</span>.</li>
+</ul>
+<p>Using <a href="#eq-bin-z" class="quarto-xref">Equation&nbsp;<span>2.3</span></a>, we can then find the associated two-sided <span class="math inline">\(p\)</span>-value. If the <span class="math inline">\(p\)</span>-value is less than our significance level, <span class="math inline">\(\alpha\)</span>, we reject <span class="math inline">\(H_0\)</span> and conclude that the predictor is significant.</p>
+<p>Our confidence intervals will be calculated using the following formula <span class="citation" data-cites="Kutner2004 Agresti2015">(<a href="references.html#ref-Kutner2004" role="doc-biblioref">1</a>,<a href="references.html#ref-Agresti2015" role="doc-biblioref">4</a>)</span>:</p>
+<p><span id="eq-bin-ci"><span class="math display">\[
+\hat\beta_i \pm z_{\alpha/2} \times \text{SE}_{\beta_i},
+\tag{2.4}\]</span></span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(\hat\beta_i\)</span> is the slope of the <span class="math inline">\(i\)</span> predictor,</li>
+<li><span class="math inline">\(z_{\alpha/2}\)</span> is the critical value of <span class="math inline">\(z\)</span>, and</li>
+<li><span class="math inline">\(\text{SE}_{\beta_i}\)</span> is the standard error of <span class="math inline">\(\beta_i\)</span>.</li>
+</ul>
+<p>To find the 95% CI for the OR, we exponentiate <a href="#eq-bin-ci" class="quarto-xref">Equation&nbsp;<span>2.4</span></a>, the confidence interval for <span class="math inline">\(\beta\)</span>,</p>
+<p><span id="eq-bin-or-ci"><span class="math display">\[
+\exp\{\hat\beta_i \pm z_{\alpha/2} \times \text{SE}_{\beta_i}\}.
+\tag{2.5}\]</span></span></p>
+</section>
+<section id="multinomial-logistic-regression" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="multinomial-logistic-regression"><span class="header-section-number">2.2.2</span> Multinomial Logistic Regression</h3>
+<p>Multinomial logistic regression is used to predict the probability of an event when there are three or more possible unordered outcomes <span class="citation" data-cites="Kutner2004 Agresti2007 James2013 Agresti2015">(<a href="references.html#ref-Kutner2004" role="doc-biblioref">1</a>–<a href="references.html#ref-Agresti2015" role="doc-biblioref">4</a>)</span>. If there are <span class="math inline">\(c\)</span> classes in the outcome, this approach simultaneously estimates <span class="math inline">\(c-1\)</span> models. The <span class="math inline">\(c^{th}\)</span> category is used as the reference category while the other <span class="math inline">\(c-1\)</span> categories are compared to it.</p>
+<p>The model of multinomial logistic regression is in the form <span class="citation" data-cites="Kutner2004 Agresti2015">(<a href="references.html#ref-Kutner2004" role="doc-biblioref">1</a>,<a href="references.html#ref-Agresti2015" role="doc-biblioref">4</a>)</span>:</p>
+<p><span id="eq-mult-model"><span class="math display">\[
+\ln \left( \frac{\hat\pi_j}{\hat\pi_{\text{ref}}} \right) = \hat{\beta}_{0j} + \hat{\beta}_{1j} x_1 + ... + \hat{\beta}_{kj} x_k,
+\tag{2.6}\]</span></span></p>
+<p>where <span class="math inline">\(\hat\pi_j\)</span> is the probability of the response category, <span class="math inline">\(\hat\pi_{\text{ref}}\)</span> represents the probability of the reference category, and <span class="math inline">\(k\)</span> is the number of predictors in the model.</p>
+<p>Like in binary logistic regression (<a href="#eq-bin-model" class="quarto-xref">Equation&nbsp;<span>2.1</span></a>), this initial multinomial logistic model will give us the log-odds of our outcome, an observed nest. We will again exponentiate and interpret in terms of the odds ratio, like in <a href="#eq-bin-or" class="quarto-xref">Equation&nbsp;<span>2.2</span></a>,</p>
+<p><span id="eq-mult-or"><span class="math display">\[
+\text{OR}_i = e^{\hat{\beta}_{ij}}.
+\tag{2.7}\]</span></span></p>
+<p>Odds ratios for multinomial logistic regression models (<a href="#eq-mult-model" class="quarto-xref">Equation&nbsp;<span>2.6</span></a>) generally interpret the same as in binary logistic regression (<a href="#eq-bin-model" class="quarto-xref">Equation&nbsp;<span>2.1</span></a>), with a slight change to the comparison in the outcome <span class="citation" data-cites="Agresti2007">(<a href="references.html#ref-Agresti2007" role="doc-biblioref">2</a>)</span>. For continuous predictors, we provide the following interpretations for odds ratios in multinomial logistic regression: for every 1 unit increase in the predictor, the odds of group <span class="math inline">\(j\)</span> in the outcome, as compared to the reference group in the outcome, are multiplied by <span class="math inline">\(\exp\{\hat\beta_{ij}\}\)</span>.</p>
+<p>Statistical significance is performed similarly as in the binary logistic regression case. Both the Wald <span class="math inline">\(z\)</span> from <a href="#eq-bin-z" class="quarto-xref">Equation&nbsp;<span>2.3</span></a> and the confidence interval for <span class="math inline">\(\beta_i\)</span> from <a href="#eq-bin-ci" class="quarto-xref">Equation&nbsp;<span>2.4</span></a> extend to the multinomial case <span class="citation" data-cites="Kutner2004 Agresti2015">(<a href="references.html#ref-Kutner2004" role="doc-biblioref">1</a>,<a href="references.html#ref-Agresti2015" role="doc-biblioref">4</a>)</span>. As in binary logistic regression, to find the 95% CI for the OR, we exponentiate the confidence interval for <span class="math inline">\(\hat\beta\)</span>, as seen in <a href="#eq-bin-or-ci" class="quarto-xref">Equation&nbsp;<span>2.5</span></a>.</p>
+</section>
+<section id="model-comparison" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="model-comparison"><span class="header-section-number">2.2.3</span> Model Comparison</h3>
+<p>Both binary logistic and multinomial logistic regression models can be used to predict categorical outcomes. In order to compare the models in this particular application, we will look at classification accuracy and other related measures.</p>
+<p>First, we find the predicted probabilities for each observation. In the case of binary logistic regression, we find the predicted probability of a nest being present. We define <span class="math inline">\(\hat\pi = \text{P}[\text{Nest Present}]\)</span>. Mathematically,</p>
+<p><span class="math display">\[
+\hat{\text{Nested}} = \begin{cases}
+      \text{1 (predicted nest)} &amp; \text{if } \hat{\pi} \ge 0.5 \\
+      \text{0 (not a predicted nest)} &amp; \text{if } \hat{\pi} &lt; 0.5
+   \end{cases}
+\]</span></p>
+<p>In the case of multinomial logistic regression, we have three possible outcomes, so we find the predicted probabilities for each of the three outcomes. To classify, we look at the predicted probabilities for each observation and assign the observation to the category with the highest predicted probability. We define <span class="math inline">\(\hat\pi_{\text{P}} = \text{P}[\text{Nest Present}]\)</span>, <span class="math inline">\(\hat\pi_{\text{PA}} = \text{P}[\text{Pseudo Absence}]\)</span>, and <span class="math inline">\(\hat\pi_{\text{FC}} = \text{P}[\text{False Crawl}]\)</span>. Mathematically,</p>
+<p><span class="math display">\[
+\hat{\text{Nest Type}} = \begin{cases}
+      \ \  \text{ P} &amp; \text{if } \hat{\pi}_{\text{P}} = \max(\hat{\pi}_{\text{P}}, \hat{\pi}_{\text{PA}}, \hat{\pi}_{\text{FC}}) \\
+      \text{PA} &amp; \text{if } \hat{\pi}_{\text{PA}} = \max(\hat{\pi}_{\text{P}}, \hat{\pi}_{\text{PA}}, \hat{\pi}_{\text{FC}}) \\
+      \text{FC} &amp; \text{if } \hat{\pi}_{\text{FC}} = \max(\hat{\pi}_{\text{P}}, \hat{\pi}_{\text{PA}}, \hat{\pi}_{\text{FC}})
+   \end{cases}
+\]</span></p>
+<p>Then, to examine the accuracy of the models, we look at confusion matrices and classifications. The confusion matrix shows the observed outcomes and the predicted outcomes. A confusion matrix is defined as follows,</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 29%">
+<col style="width: 29%">
+<col style="width: 1%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Observed Positive</th>
+<th>Observed Negative</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Predicted Positive</strong></td>
+<td>True Positive (TP)</td>
+<td>False Positive (FP)</td>
+<td>Total Predicted Positives (TP + FP)</td>
+</tr>
+<tr class="even">
+<td><strong>Predicted Negative</strong></td>
+<td>False Negative (FN)</td>
+<td>True Negative (TN)</td>
+<td>Total Predicted Negatives (FN + TN)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Total True Positives (TP + FN)</td>
+<td>Total True Negatives (FP + TN)</td>
+<td>Total Observations (TP + FP + TN + FN)</td>
+</tr>
+</tbody>
+</table>
+<p>The current analysis is interested in comparing the performance of pseudo absence points and false crawl points when representing the lack of an observed nest. Thus, we define a “positive” outcome as an absent nest (PA, FC) and a “negative” outcome as an observed nest (P). Then using the confusion matrix, we can calculate the following measures to assess model performance:</p>
+<p><strong><em>Accuracy</em></strong></p>
+<p>The accuracy of a model is defined as the percentage of the observations were correctly categorized by the model <span class="citation" data-cites="Agresti2007 James2013">(<a href="references.html#ref-Agresti2007" role="doc-biblioref">2</a>,<a href="references.html#ref-James2013" role="doc-biblioref">3</a>)</span>. In the context of our analysis, accuracy represents the percentage of nests that were correctly classified as present (P) or not present (either PA or FC) by the model. Mathematically,</p>
+<p><span id="eq-accuracy"><span class="math display">\[
+\text{accuracy} = \frac{\text{TP}  +  \text{TN}}{\text{TP} + \text{FP} + \text{TN} + \text{FN}}
+\tag{2.8}\]</span></span></p>
+<p>where</p>
+<ul>
+<li>TP = number of true positives,</li>
+<li>TN = number of true negatives,</li>
+<li>FP = number of false positives, and</li>
+<li>FN = number of false negatives.</li>
+</ul>
+<p><strong><em>Sensitivity</em></strong></p>
+<p>The sensitivity of a model is the probability of correctly identifying positive outcomes <span class="citation" data-cites="Agresti2007 James2013">(<a href="references.html#ref-Agresti2007" role="doc-biblioref">2</a>,<a href="references.html#ref-James2013" role="doc-biblioref">3</a>)</span>. In the context of our analysis, sensitivity represents the probability of correctly identifying present nests (P) by the model. Mathematically,</p>
+<p><span id="eq-sensitivity"><span class="math display">\[
+\text{sensitivity} = \frac{\text{TP}}{\text{TP + FN}}
+\tag{2.9}\]</span></span></p>
+<p>where</p>
+<ul>
+<li>TP = number of true positives and</li>
+<li>FN = number of false negatives</li>
+</ul>
+<p><strong><em>Specificity</em></strong></p>
+<p>The specificity of a model is the probability of correctly identifying negative outcomes <span class="citation" data-cites="Agresti2007 James2013">(<a href="references.html#ref-Agresti2007" role="doc-biblioref">2</a>,<a href="references.html#ref-James2013" role="doc-biblioref">3</a>)</span>. In the context of our analysis, specificity represents the probability of correctly identifying no nest (either PA or FC) by the model. Mathematically,</p>
+<p><span id="eq-specificity"><span class="math display">\[
+\text{specificity} = \frac{\text{TN}}{\text{FP + TN}}
+\tag{2.10}\]</span></span></p>
+<p>where</p>
+<ul>
+<li>TP = number of true positives,</li>
+<li>TN = number of true negatives,</li>
+<li>FP = number of false positives, and</li>
+<li>FN = number of false negatives.</li>
+</ul>
+<p><strong><em>Positive Predictive Value (PPV)</em></strong></p>
+<p>The positive predictive value (PPV) of a model is the probability that a positive prediction is actually positive <span class="citation" data-cites="Agresti2007 James2013">(<a href="references.html#ref-Agresti2007" role="doc-biblioref">2</a>,<a href="references.html#ref-James2013" role="doc-biblioref">3</a>)</span>. In the context of our analysis, PPV represents the probability that a nest predicted as present (P) is actually present. Mathematically,</p>
+<p><span id="eq-ppv"><span class="math display">\[
+\text{PPV} = \frac{\text{TP}}{\text{TP + FP}}
+\tag{2.11}\]</span></span></p>
+<p>where</p>
+<ul>
+<li>TP = number of true positives,</li>
+<li>TN = number of true negatives,</li>
+<li>FP = number of false positives, and</li>
+<li>FN = number of false negatives.</li>
+</ul>
+<p><strong><em>Negative Predictive Value (NPV)</em></strong></p>
+<p>The negative predictive value (NPV) of a model is the probability that a negative prediction is actually negative <span class="citation" data-cites="Agresti2007 James2013">(<a href="references.html#ref-Agresti2007" role="doc-biblioref">2</a>,<a href="references.html#ref-James2013" role="doc-biblioref">3</a>)</span>. In the context of our analysis, NPV represents the probability that a nest predicted as not present (either PA or FC) is actually not present. Mathematically,</p>
+<p><span id="eq-npv"><span class="math display">\[
+\text{NPV} = \frac{\text{TN}}{\text{TN + FN}}
+\tag{2.12}\]</span></span></p>
+<p>where</p>
+<ul>
+<li>TP = number of true positives,</li>
+<li>TN = number of true negatives,</li>
+<li>FP = number of false positives, and</li>
+<li>FN = number of false negatives.</li>
+</ul>
+</section>
+<section id="current-analysis" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="current-analysis"><span class="header-section-number">2.2.4</span> Current Analysis</h3>
+<p>Binary logistic regression was used to construct two separate models comparing the probability of nesting against the probability of not nesting. We defined not nesting in two different ways, once using pseudo absence points and once using false crawl points. First, we compare presence versus pseudo absence:</p>
+<p><span id="eq-bin-pa-model"><span class="math display">\[
+\ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{PA}}}\right) = \hat\beta_0 + \hat\beta_1 x_1 + \hat\beta_2  x_2  + \hat\beta_3  x_1 x_2,
+\tag{2.13}\]</span></span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(\hat\pi_{\text{P}}\)</span> = probability of presence,</li>
+<li><span class="math inline">\(\hat\pi_{\text{PA}} = 1 - \hat{\pi}_{\text{P}}\)</span> = probability of pseudo absence,</li>
+<li><span class="math inline">\(x_1\)</span> = beach slope, and</li>
+<li><span class="math inline">\(x_2\)</span> = foreshore slope.</li>
+</ul>
+<p>Then, we compare presence versus false crawl:</p>
+<p><span id="eq-bin-fc-model"><span class="math display">\[
+\ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{FC}}}\right) = \hat\beta_0 + \hat\beta_1 x_1 + \hat\beta_2  x_2  + \hat\beta_3  x_1 x_2,
+\tag{2.14}\]</span></span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(\hat\pi_{\text{P}}\)</span> = probability of presence,</li>
+<li><span class="math inline">\(\hat\pi_{\text{FC}} = 1 - \hat{\pi}_{\text{P}}\)</span> = probability of false crawl,</li>
+<li><span class="math inline">\(x_1\)</span> = beach slope, and</li>
+<li><span class="math inline">\(x_2\)</span> = foreshore slope.</li>
+</ul>
+<p>Multinomial logistic regression was used to model all three possible outcome categories simultaenously. Again, we compared presence points against pseudo absence points and, simultaneously, presence points against false crawl points. Mathematically, we simultaneously estimated the following two models:</p>
+<!-- $$ -->
+<!-- \begin{align*} -->
+<!-- \ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{PA}}}\right) &= \hat\beta_0 + \hat\beta_1 x_1 + \hat\beta_2  x_2  + \hat\beta_3  x_1 x_2, \\ -->
+<!-- \ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{FC}}}\right) &= \hat\beta_0 + \hat\beta_1 x_1 + \hat\beta_2  x_2  + \hat\beta_3  x_1 x_2, -->
+<!-- \end{align*} -->
+<!-- $$ {#eq-bin-pa-model} -->
+<p>where</p>
+<ul>
+<li><span class="math inline">\(\hat\pi_{\text{P}}\)</span> = probability of presence,</li>
+<li><span class="math inline">\(\hat\pi_{\text{PA}}\)</span> = probability of pseudo absence,</li>
+<li><span class="math inline">\(\hat\pi_{\text{FC}}\)</span> = probability of false crawl,</li>
+<li><span class="math inline">\(x_1\)</span> = beach slope, and</li>
+<li><span class="math inline">\(x_2\)</span> = foreshore slope.</li>
+</ul>
+<p>For all models, adjusted odds ratios, 95% confidence intervals for the adjusted odds ratios, and significance of predictors are reported. Statistical significance was defined <em>a priori</em> as <span class="math inline">\(p &lt; 0.05\)</span>.</p>
+<p>Predicted values were calulated based on estimated models, then compared against true values, constructing the confusion matrix. Modeling approaches are compared by considering the resulting classification accuracy, sensitivity of nest detection, specificity of nest detection, positive predictive value (PPV), and negative predictive value (NPV) of each model.</p>
+<p>Data management, analysis, and graphing was performed using R version 4.5.1 <span class="citation" data-cites="Rcore">(<a href="references.html#ref-Rcore" role="doc-biblioref">5</a>)</span>. Data management was completed using functions from <code>tidyverse</code> package <span class="citation" data-cites="tidyverse">(<a href="references.html#ref-tidyverse" role="doc-biblioref">6</a>)</span>. The <code>glm</code> function was used to perform binary logistic regression, while the <code>multinom</code> function from the <code>nnet</code> package was used to perform multinomial logistic regression <span class="citation" data-cites="nnet">(<a href="references.html#ref-nnet" role="doc-biblioref">7</a>)</span>. Finally, the <code>caret</code> package was used to create confusion matrices <span class="citation" data-cites="caret">(<a href="references.html#ref-caret" role="doc-biblioref">8</a>)</span>.</p>
+</section>
+</section>
+<section id="results" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="results"><span class="header-section-number">2.3</span> Results</h2>
+<section id="estimated-models" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="estimated-models"><span class="header-section-number">2.3.1</span> Estimated Models</h3>
+<section id="binary-logistic-regression-1" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="binary-logistic-regression-1">Binary Logistic Regression</h4>
+<p><strong><em>Presence vs.&nbsp;False Crawl</em></strong></p>
+<p>Modeling the probability of the presence of a nest (1) versus a false crawl (0), we looked at nest status as a function of beach slope, foreshore slope and the interaction between beach slope and foreshore slope. The model produced was:</p>
+<p><span id="eq-bin-fc-int"><span class="math display">\[
+\ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{FC}}} \right) = 0.61 + 0.016 x_1 + 0.046 x_2 - 0.0079x_1 x_2,
+\tag{2.15}\]</span></span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(\hat\pi_{\text{P}}\)</span> = probability of presence,</li>
+<li><span class="math inline">\(\hat\pi_{\text{FC}}\)</span> = probability of false crawl,</li>
+<li><span class="math inline">\(x_1\)</span> = beach slope, and</li>
+<li><span class="math inline">\(x_2\)</span> = foreshore slope.</li>
+</ul>
+<!-- These results reveal that for a 1 degree increase in the beach slope, the odds of a nest being present are multiplied by $e^{0.016} = 1.016$, or are increasing by 1.6%. When foreshore slope increases by 1 meter, the odds of a nest being present are multiplied by $e^{0.046} = 1.047$, or are increasing by 4.7%. Lastly, when both beach slope and foreshore slope increases by 1 degree, the odds of a nest being present are multiplied by $e^{-0.0079} = 0.992$, which indicates a 0.8% decrease in the odds. -->
+<p>Because the interaction between beach slope and foreshore slope was not significant, removed the interaction from the model for parcimony and interpretability. The model without the interaction term was:</p>
+<p><span id="eq-bin-fc-me"><span class="math display">\[
+\ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{FC}}} \right) = 0.88 + 0.049 x_1 + 0.011 x_2,
+\tag{2.16}\]</span></span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(\hat\pi_{\text{P}}\)</span> = probability of presence,</li>
+<li><span class="math inline">\(\hat\pi_{\text{FC}}\)</span> = probability of false crawl,</li>
+<li><span class="math inline">\(x_1\)</span> = beach slope, and</li>
+<li><span class="math inline">\(x_2\)</span> = foreshore slope.</li>
+</ul>
+<p>These results reveal that for a 1 degree increase in the beach slope, the odds of a nest being present are multiplied by <span class="math inline">\(e^{-0.049} = 0.95\)</span>, or are decreased by 5%. When foreshore slope increases by 1 meter, the odds of a nest being present are multiplied by <span class="math inline">\(e^{0.011} = 1.01\)</span>, or are increased by 1%.</p>
+<p><strong><em>Presence vs.&nbsp;Pseudo Absence</em></strong></p>
+<p>For the probability of the presence of a nest (1) versus a pseudo absence (0) we also considered the interaction model where nest status was modeled as a function of beach slope, foreshore slope and the interaction between beach slope and foreshore slope. The model produced was:</p>
+<p><span id="eq-bin-pa-int"><span class="math display">\[
+\ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{PA}}} \right) = 0.34 + 0.013 x_1 + 0.009 x_2 - 0.0001 x_1 x_2,
+\tag{2.17}\]</span></span></p>
+<p>where</p>
+<ul>
+<li><span class="math inline">\(\hat\pi_{\text{P}}\)</span> = probability of presence,</li>
+<li><span class="math inline">\(\hat\pi_{\text{FC}}\)</span> = probability of false crawl,</li>
+<li><span class="math inline">\(x_1\)</span> = beach slope, and</li>
+<li><span class="math inline">\(x_2\)</span> = foreshore slope.</li>
+</ul>
+<!-- These results reveal that for a 1 meter increase in the beach slope, the odds of a nest being present are multiplied by $e^{0.013} = 1.014$, which is a 1.4% increase in the odds. For a 1 meter increase in foreshore slope, the odds of a nest being present are multiplied by $e^{0.009} = 1.009$, indicating a 0.9% increase in the odds. Lastly, for a 1 unit increase in the interaction between beach slope and foreshore slope, the odds of a nest being present are multiplied by $e$^0.001^ = 1.001, which shows a 0.1% increase in the odds. -->
+<p>The interaction between beach slope and foreshore slope was again not significant (<span class="math inline">\(p &gt; 0.05\)</span>), it was removed for parcimony. The model without the interaction term was:</p>
+<p><span id="eq-bin-pa-me"><span class="math display">\[
+\ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{PA}}} \right) = 0.31 + 0.022 x_1 + 0.013 x_2
+\tag{2.18}\]</span></span> where</p>
+<ul>
+<li><span class="math inline">\(\hat\pi_{\text{P}}\)</span> = probability of presence,</li>
+<li><span class="math inline">\(\hat\pi_{\text{FC}}\)</span> = probability of false crawl,</li>
+<li><span class="math inline">\(x_1\)</span> = beach slope, and</li>
+<li><span class="math inline">\(x_2\)</span> = foreshore slope.</li>
+</ul>
+<p>These results reveal that for a 1 degree increase in the beach slope, the odds of a nest being present are multiplied by <span class="math inline">\(e^{0.022} = 1.02\)</span>, or are increased by 2%. For a 1 degree increase in foreshore slope, the odds of a nest being present are multiplied by <span class="math inline">\(e^{0.013} = 1.01\)</span>, indicating a 1% increase in the odds.</p>
+<!-- Next we have the models which looked to predict the probability of the presence of a nest (1) versus a false crawl (0) based on the values recorded for the beach slope and foreshore slope. Looking at nest status as a function of beach slope, the resulting model was: -->
+<!-- $$ \ln \left( \frac{\hat\pi_{\text{P}}}{1-\hat\pi_{\text{P}}} \right) = 0.9597 - 0.047 * Beach Slope $$ -->
+<!-- These results reveal that for a 1 meter increase in the beach slope, the odds of a nest being present are multiplied by $e$^-0.047^ = 0.954, indicating a 4.6% decrease in the odds.  -->
+<!-- Subsequently, we modeled nest status as a function of foreshore slope which produced the following model: -->
+<!-- $$ \ln \left( \frac{\hat\pi_{\text{P}}}{1-\hat\pi_{\text{P}}} \right) = 0.76 -0.0037 * Foreshore Slope $$ -->
+<!-- The results of this model reveal that for a 1 meter increase in the foreshore slope, the odds of a nest being present are multiplied by $e$^-0.037^ = 0.996. That is to say, the odds decrease by 0.4%.   -->
+<!-- Alternatively, we looked to predict the probability of the presence of a nest (1) versus a pseudo absence (0). Modeling nest status as a function of beach slope, the resulting model was: -->
+<!-- $$ \ln \left( \frac{\hat\pi_{\text{P}}}{1-\hat\pi_{\text{P}}} \right) = -0.421 + 0.101 * Beach Slope $$ -->
+<!--  These results reveal that for a 1 meter increase in the beach slope, the odds of a nest being present are multiplied by $e$^0.101^ = 1.106, showing a 10.6% increase in the odds of a nest being present.  -->
+<!-- Lastly, with Presence versus Pseudo Absence, we modeled nest status as a function of foreshore slope which produced the following model: -->
+<!-- $$ \ln \left( \frac{\hat\pi_{\text{P}}}{1-\hat\pi_{\text{P}}} \right) = -0.549 + 0.073 * Foreshore Slope $$ -->
+<!--  Based on this, our results reveal that for a 1 meter increase in the foreshore slope, the odds of a nest being present are multiplied by $e$^0.073^ = 1.075, showing a 7.5% increase in the odds.  -->
+</section>
+<section id="multinomial-logistic-regression-1" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="multinomial-logistic-regression-1">Multinomial Logistic Regression</h4>
+<p>For multinomial logistical regression models we looked at the same model structures, but with the model accounting for all three possible outcomes simultaneously. First looking at the models including the interation between beach slope and foreshore slope:</p>
+<!-- $$ -->
+<!-- \begin{align*} -->
+<!-- \ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{PA}}} \right) &= -0.569 + 0.029x_1 + 0.026x_2 + 0.007x_1x_2 \\ -->
+<!-- \ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{FC}}} \right) &= \ \ \ 0.637 + 0.008x_1 + 0.041x_2-0.007x_1 x_2 -->
+<!-- \end{align*} -->
+<!-- $$ {#eq-mult-int} -->
+<!-- These results reveal that for a 1 meter increase in the beach slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by $e$^0.029^ = 1.03, indicating a 3% increase in odds. For a 1 meter increase in foreshore slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by $e$^0.026^ = 1.027, which shows a 2.7% increase in odds. Lastly, for a 1 meter increase in the interaction between beach slope and foreshore slope, as compared to a pseudo absence, the odds of a nest being present are multiplied by $e$^0.007^ = 1.007, indicating a 0.7% increase. -->
+<!-- These results indicate that for a 1 meter increase in the beach slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by $e$^0.008^ = 1.01, a 1% increase in odds. For a 1 meter increase in foreshore slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by $e$^0.041^ = 1.04, a 4% increase. Lastly, for a 1 meter increase in the interaction between beach slope and foreshore slope, as compared to a pseudo absence, the odds of a nest being present are multiplied by $e$^-0.007^ = 0.993, a 0.7% decrease in the odds of a nest being present. -->
+<p>As in the binary logistic regression models, the interaction between beach slope and foreshore slope was not significant (<span class="math inline">\(p &gt; 0.05\)</span>). The interaction term was removed for parcimony, resulting in the following models:</p>
+<!-- $$ -->
+<!-- \begin{align*} -->
+<!-- \ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{PA}}} \right) &= -0.759 + 0.088x_1 + 0.051x_2  \\ -->
+<!-- \ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{FC}}} \right) &= \ \ \ 0.890 + 0.048x_1 + 0.010x_2 -->
+<!-- \end{align*} -->
+<!-- $$ {#eq-mult-me} -->
+<p>In the first model, with pseudo-absence points as the reference category, we see that for a 1 degree increase in the beach slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by <span class="math inline">\(e^{0.088} = 1.09\)</span>, indicating a 9% increase in odds. For a 1 degree increase in foreshore slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by <span class="math inline">\(e^{0.051} = 1.05\)</span>, which shows a 5% increase in odds.</p>
+<p>In the second model, with false crawl points as the reference category, we see that for a 1 degree increase in the beach slope, the odds of a nest being present, as compared to a false crawl, are multiplied by <span class="math inline">\(e\)</span><sup>0.048</sup> = 0.95, indicating a 5% decrease in odds. For a 1 degree increase in foreshore slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by <span class="math inline">\(e\)</span><sup>0.0095</sup> = 1.01, which shows a 1% increase in odds.</p>
+<!-- Next, with pseudo absence as the reference category, we looked at nest status as a function of beach slope. The resulting model was: -->
+<!-- $$\ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{PA}}} \right) = -0.408 + 0.097 * BeachSlope$$ -->
+<!-- The results show that for a 1 meter increase in the beach slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by $e$^0.097^ = 1.102, showing a 10.2% increase in the odds.   -->
+<!-- We then modeled nest status as a function of foreshore slope which produced the following model: -->
+<!-- $$\ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{PA}}} \right) = -0.541 + 0.072 * Foreshore Slope $$ -->
+<!-- This model reveals that for a 1 meter increase in the foreshore slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by $e$^0.072^ = 1.074, a 7.4% increase in odds.  -->
+<!-- With false crawl as the reference group, we again considered nesting status as a function of beach slope and the following model resulted: -->
+<!-- $$\ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{FC}}} \right) = 0.957  - 0.046 * BeachSlope$$ -->
+<!-- The model shows that for a 1 meter increase in the beach slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by $e$^-0.046^ = 0.955, which indicates a 4.5% decrease. -->
+<!-- Still using false crawl as the reference category, we modeled nest status as a function of foreshore slope which produced the following model: -->
+<!-- $$\ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{FC}}} \right) = 0.761 - 0.004 * Foreshore Slope $$ -->
+<!-- These results reveal that for a 1 meter increase in the foreshore slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by $e$^- 0.004^ = 0.996, a 0.4% decrease in the odds.  -->
+</section>
+</section>
+<section id="classification" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="classification"><span class="header-section-number">2.3.2</span> Classification</h3>
+<section id="binary-logistic-regression-2" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="binary-logistic-regression-2">Binary Logistic Regression</h4>
+<p>Considering only the models predicting nesting status as a function of both beach slope and foreshore slope, confusion matrices were examined to determine the accuracy, sensitivity, specificity, positive predictive value (PPV), and negative predictive value (NPV) for each model.</p>
+<div id="tbl-cm-bin-pa" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cm-bin-pa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.1: Binary Logistic Regression: Pseudo Absence Confusion Matrix
+</figcaption>
+<div aria-describedby="tbl-cm-bin-pa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<style>
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-zbbt{background-color:#C9DAF8;border-color:#c0c0c0;text-align:center;vertical-align:top}
+.tg .tg-f365{background-color:#c0c0c0;border-color:#c0c0c0;color:#000000;text-align:left;vertical-align:top}
+.tg .tg-4n2o{border-color:#c0c0c0;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-bx42{border-color:#c0c0c0;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-fzdr{border-color:#c0c0c0;text-align:center;vertical-align:top}
+.rotate {
+    position: relative;
+    height: 120px;
+    width: 30px;
+    padding: 0;
+}
+.rotate > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    white-space: nowrap;
+}
+.tg td, 
+.tg th {
+    border-color: #c0c0c0 !important;
+</style>
+<table class="tg">
+<tbody>
+<tr>
+<td class="tg-f365">
+</td>
+<td class="tg-f365">
+</td>
+<td class="tg-4n2o" colspan="2">
+<span style="font-weight:bold">Observed</span>
+</td>
+</tr>
+<tr>
+<td class="tg-f365">
+</td>
+<td class="tg-f365">
+</td>
+<td class="tg-4n2o">
+<span style="font-weight:bold">PA</span>
+</td>
+<td class="tg-4n2o">
+<span style="font-weight:bold">P</span>
+</td>
+</tr>
+<tr>
+<td class="rotate" rowspan="2">
+<div>
+<strong>Predicted</strong>
+</div>
+</td>
+<td class="tg-bx42">
+<span style="font-weight:bold">PA</span>
+</td>
+<td class="tg-zbbt">
+<span style="background-color:#C9DAF8">51</span>
+</td>
+<td class="tg-fzdr">
+27
+</td>
+</tr>
+<tr>
+<td class="tg-bx42">
+<span style="font-weight:bold">P</span>
+</td>
+<td class="tg-fzdr">
+41
+</td>
+<td class="tg-zbbt">
+<span style="background-color:#C9DAF8">38</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div id="tbl-cm-bin-fc" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cm-bin-fc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.2: Binary Logistic Regression: False Crawl Confusion Matrix
+</figcaption>
+<div aria-describedby="tbl-cm-bin-fc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<style>
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-zbbt{background-color:#C9DAF8;border-color:#c0c0c0;text-align:center;vertical-align:top}
+.tg .tg-f365{background-color:#c0c0c0;border-color:#c0c0c0;color:#000000;text-align:left;vertical-align:top}
+.tg .tg-4n2o{border-color:#c0c0c0;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-bx42{border-color:#c0c0c0;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-fzdr{border-color:#c0c0c0;text-align:center;vertical-align:top}
+.rotate {
+    position: relative;
+    height: 120px;
+    width: 30px;
+    padding: 0;
+}
+.rotate > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    white-space: nowrap;
+}
+.tg td, 
+.tg th {
+    border-color: #c0c0c0 !important;
+</style>
+<table class="tg">
+<tbody>
+<tr>
+<td class="tg-f365">
+</td>
+<td class="tg-f365">
+</td>
+<td class="tg-4n2o" colspan="2">
+<span style="font-weight:bold">Observed</span>
+</td>
+</tr>
+<tr>
+<td class="tg-f365">
+</td>
+<td class="tg-f365">
+</td>
+<td class="tg-4n2o">
+<span style="font-weight:bold">FC</span>
+</td>
+<td class="tg-4n2o">
+<span style="font-weight:bold">P</span>
+</td>
+</tr>
+<tr>
+<td class="rotate" rowspan="2">
+<div>
+<strong>Predicted</strong>
+</div>
+</td>
+<td class="tg-bx42">
+<span style="font-weight:bold">FC</span>
+</td>
+<td class="tg-zbbt">
+<span style="background-color:#C9DAF8">0</span>
+</td>
+<td class="tg-fzdr">
+38
+</td>
+</tr>
+<tr>
+<td class="tg-bx42">
+<span style="font-weight:bold">P</span>
+</td>
+<td class="tg-fzdr">
+0
+</td>
+<td class="tg-zbbt">
+<span style="background-color:#C9DAF8">79</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="#tbl-cm-bin-pa" class="quarto-xref">Table&nbsp;<span>2.1</span></a> shows the confusion matrix for the binary logistic regression model predicting presence versus pseudo absence, while <a href="#tbl-cm-bin-fc" class="quarto-xref">Table&nbsp;<span>2.2</span></a> shows the confusion matrix for the binary logistic regression model predicting presence versus false crawl. The model comparing against pseudo absence correctly classified 38/79 presence points and 51/78 pseudo absence points while the model comparing against false crawl correctly classified 79/79 presence points and 0/38 false crawl points.</p>
+</section>
+<section id="multinomial-logistic-regression-2" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="multinomial-logistic-regression-2">Multinomial Logistic Regression</h4>
+<p>Examining the confusion matrix for the multinomial logistic regression model predicting among presence, pseudo absence, and false crawl, means that we now have a 3 <span class="math inline">\(\times\)</span> 3 confusion matrix to consider.</p>
+<div id="tbl-cm-mult" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cm-mult-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.3: Multinomial Logistic Regression: Confusion Matrix
+</figcaption>
+<div aria-describedby="tbl-cm-mult-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<style>
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{
+  border-color:black;
+  border-style:solid;
+  border-width:1px;
+  overflow:hidden;
+  padding:10px 5px;
+  word-break:normal;
+}
+.tg th{
+  border-color:black;
+  border-style:solid;
+  border-width:1px;
+  font-weight:normal;
+  overflow:hidden;
+  padding:10px 5px;
+  word-break:normal;
+}
+.tg .tg-zbbt{background-color:#C9DAF8;border-color:#c0c0c0;text-align:center;vertical-align:top}
+.tg .tg-f365{background-color:#c0c0c0;border-color:#c0c0c0;color:#000000;text-align:left;vertical-align:top}
+.tg .tg-4n2o{border-color:#c0c0c0;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-bx42{border-color:#c0c0c0;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-fzdr{border-color:#c0c0c0;text-align:center;vertical-align:top}
+
+.rotate {
+  position: relative;
+  height: 120px;
+  width: 30px;
+  padding: 0;
+}
+.rotate > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  white-space: nowrap;
+}
+
+/* make all borders the same light gray */
+.tg td,
+.tg th {
+  border-color: #c0c0c0 !important;
+}
+</style>
+<table class="tg">
+<tbody>
+<tr>
+<td class="tg-f365">
+</td>
+<td class="tg-f365">
+</td>
+<td class="tg-4n2o" colspan="3">
+<span style="font-weight:bold">Observed</span>
+</td>
+</tr>
+<tr>
+<td class="tg-f365">
+</td>
+<td class="tg-f365">
+</td>
+<td class="tg-4n2o">
+<span style="font-weight:bold">P</span>
+</td>
+<td class="tg-4n2o">
+<span style="font-weight:bold">PA</span>
+</td>
+<td class="tg-4n2o">
+<span style="font-weight:bold">FC</span>
+</td>
+</tr>
+<tr>
+<td class="rotate" rowspan="3">
+<div>
+<strong>Predicted</strong>
+</div>
+</td>
+<td class="tg-bx42">
+<span style="font-weight:bold">P</span>
+</td>
+<td class="tg-zbbt">
+38
+</td>
+<td class="tg-fzdr">
+27
+</td>
+<td class="tg-fzdr">
+20
+</td>
+</tr>
+<tr>
+<td class="tg-bx42">
+<span style="font-weight:bold">PA</span>
+</td>
+<td class="tg-fzdr">
+41
+</td>
+<td class="tg-zbbt">
+51
+</td>
+<td class="tg-fzdr">
+18
+</td>
+</tr>
+<tr>
+<td class="tg-bx42">
+<span style="font-weight:bold">FC</span>
+</td>
+<td class="tg-fzdr">
+0
+</td>
+<td class="tg-fzdr">
+0
+</td>
+<td class="tg-zbbt">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="#tbl-cm-mult" class="quarto-xref">Table&nbsp;<span>2.3</span></a> shows the confusion matrix for the multinomial logistic regression model predicting among presence, pseudo absence, and false crawl. The model correctly classified 38/85 presence points, 51/110 pseudo absence points, and 0/0 false crawl points.</p>
+<p>In order to compare the models side by side, we will now consider the “positive” outcome as either PA vs.&nbsp;P+FC or FC vs.&nbsp;P+PA for the multinomial logistic regression model. This allows us to reduce the 3 <span class="math inline">\(\times\)</span> 3 confusion matrix into a 2 <span class="math inline">\(\times\)</span> 2 confusion matrix.</p>
+<div id="tbl-cm-mult-pa" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cm-mult-pa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.4: Multinomial Logistic Regression: Pseudo Absence Confusion Matrix
+</figcaption>
+<div aria-describedby="tbl-cm-mult-pa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<style>
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-zbbt{background-color:#C9DAF8;border-color:#c0c0c0;text-align:center;vertical-align:top}
+.tg .tg-f365{background-color:#c0c0c0;border-color:#c0c0c0;color:#000000;text-align:left;vertical-align:top}
+.tg .tg-4n2o{border-color:#c0c0c0;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-bx42{border-color:#c0c0c0;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-fzdr{border-color:#c0c0c0;text-align:center;vertical-align:top}
+.rotate {
+    position: relative;
+    height: 120px;
+    width: 30px;
+    padding: 0;
+}
+.rotate > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    white-space: nowrap;
+}
+.tg td, 
+.tg th {
+    border-color: #c0c0c0 !important;
+</style>
+<table class="tg">
+<tbody>
+<tr>
+<td class="tg-f365">
+</td>
+<td class="tg-f365">
+</td>
+<td class="tg-4n2o" colspan="2">
+<span style="font-weight:bold">Observed</span>
+</td>
+</tr>
+<tr>
+<td class="tg-f365">
+</td>
+<td class="tg-f365">
+</td>
+<td class="tg-4n2o">
+<span style="font-weight:bold">PA</span>
+</td>
+<td class="tg-4n2o">
+<span style="font-weight:bold">P or FC</span>
+</td>
+</tr>
+<tr>
+<td class="rotate" rowspan="2">
+<div>
+<strong>Predicted</strong>
+</div>
+</td>
+<td class="tg-bx42">
+<span style="font-weight:bold">PA</span>
+</td>
+<td class="tg-zbbt">
+<span style="background-color:#C9DAF8">51</span>
+</td>
+<td class="tg-fzdr">
+59
+</td>
+</tr>
+<tr>
+<td class="tg-bx42">
+<span style="font-weight:bold">P or FC</span>
+</td>
+<td class="tg-fzdr">
+27
+</td>
+<td class="tg-zbbt">
+<span style="background-color:#C9DAF8">58</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div id="tbl-cm-mult-fc" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cm-mult-fc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.5: Multinomial Logistic Regression: False Crawl Confusion Matrix
+</figcaption>
+<div aria-describedby="tbl-cm-mult-fc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<style>
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-zbbt{background-color:#C9DAF8;border-color:#c0c0c0;text-align:center;vertical-align:top}
+.tg .tg-f365{background-color:#c0c0c0;border-color:#c0c0c0;color:#000000;text-align:left;vertical-align:top}
+.tg .tg-4n2o{border-color:#c0c0c0;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-bx42{border-color:#c0c0c0;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-fzdr{border-color:#c0c0c0;text-align:center;vertical-align:top}
+.rotate {
+    position: relative;
+    height: 120px;
+    width: 30px;
+    padding: 0;
+}
+.rotate > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    white-space: nowrap;
+}
+.tg td, 
+.tg th {
+    border-color: #c0c0c0 !important;
+</style>
+<table class="tg">
+<tbody>
+<tr>
+<td class="tg-f365">
+</td>
+<td class="tg-f365">
+</td>
+<td class="tg-4n2o" colspan="2">
+<span style="font-weight:bold">Observed</span>
+</td>
+</tr>
+<tr>
+<td class="tg-f365">
+</td>
+<td class="tg-f365">
+</td>
+<td class="tg-4n2o">
+<span style="font-weight:bold">FC</span>
+</td>
+<td class="tg-4n2o">
+<span style="font-weight:bold">P or PA</span>
+</td>
+</tr>
+<tr>
+<td class="rotate" rowspan="2">
+<div>
+<strong>Predicted</strong>
+</div>
+</td>
+<td class="tg-bx42">
+<span style="font-weight:bold">FC</span>
+</td>
+<td class="tg-zbbt">
+<span style="background-color:#C9DAF8">0</span>
+</td>
+<td class="tg-fzdr">
+0
+</td>
+</tr>
+<tr>
+<td class="tg-bx42">
+<span style="font-weight:bold">P or PA</span>
+</td>
+<td class="tg-fzdr">
+38
+</td>
+<td class="tg-zbbt">
+<span style="background-color:#C9DAF8">157</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p><a href="#tbl-cm-mult-pa" class="quarto-xref">Table&nbsp;<span>2.4</span></a> and <a href="#tbl-cm-mult-pa" class="quarto-xref">Table&nbsp;<span>2.4</span></a> show the confusion matrices for the multinomial logistic regression model predicting presence versus pseudo absence, The model comparing against pseudo absence correctly classified 38/79 presence points and 51/78 pseudo absence points while the model comparing against false crawl correctly classified 79/79 presence points and 0/38 false crawl points.</p>
+</section>
+</section>
+<section id="model-comparison-1" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="model-comparison-1"><span class="header-section-number">2.3.3</span> Model Comparison</h3>
+<section id="model-results-and-interpretations" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="model-results-and-interpretations">Model Results and Interpretations</h4>
+<p><a href="#tbl-results-bin-pa" class="quarto-xref">Table&nbsp;<span>2.6</span></a> shows model results for the binary and multinomial logistic regressions using pseudo absence as the reference group while <a href="#tbl-results-bin-fc" class="quarto-xref">Table&nbsp;<span>2.7</span></a> shows the same but using false crawl as the reference group.</p>
+<div id="tbl-results-bin-pa" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-results-bin-pa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.6: Model Performance: Presence vs.&nbsp;Pseudo Absence
+</figcaption>
+<div aria-describedby="tbl-results-bin-pa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<style>
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #606060;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #606060;
+    background-color: #d4e3fe;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #606060;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+</style>
+<div class="table_component" role="region" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>
+<center>
+Modeling Approach
+</center>
+</th>
+<th>
+<center>
+Predictor
+</center>
+</th>
+<th>
+<center>
+OR (95% CI)
+</center>
+</th>
+<th>
+<center>
+<em>p</em>-value
+</center>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="2">
+Binary
+</td>
+<td>
+Foreshore Slope
+</td>
+<td>
+1.01 (0.98 - 1.05)<br>
+</td>
+<td>
+0.460
+</td>
+</tr>
+<tr>
+<td>
+Beach Slope
+</td>
+<td>
+1.02 (0.99 - 1.05)
+</td>
+<td>
+0.154<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">
+Multinomial
+</td>
+<td>
+Foreshore Slope
+</td>
+<td>
+1.05 (0.92 - 1.21)<br>
+</td>
+<td>
+0.467
+</td>
+</tr>
+<tr>
+<td>
+Beach Slope
+</td>
+<td>
+1.09 (0.97 - 1.23)<br>
+</td>
+<td>
+0.162<br>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>Comparing the two modeling approaches, we see that slopes, confidence intervals, and <em>p</em>-values are similar when comparing observed nests to pseudo absence points. For foreshore slope, the adjusted odds ratio under binary logistic is 1.01 (95% CI: 0.98, 1.05; <em>p</em> = 0.460) and is 1.05 (95% CI: 0.92, 1.21; <em>p</em> = 0.467) under multinomial logistic. Similarly, the adjusted odds ratio for beach slope under binary logistic is 1.02 (95% CI: 0.99, 1.05; <em>p</em> = 0.154) and is 1.09 (95% CI: 0.97, 1.23; <em>p</em> = 0.162) under multinomial logistic.</p>
+<p>The corresponding interpretations are similar as well. For a 1 degree increase in foreshore slope, the odds of nesting increase by 1% under the binary logistic model and by 5% under the multinomial logistic model. For a 1 degree increase in beach slope, the odds of nesting increase by 2% under the binary logistic model and by 9% under the multinomial logistic model.</p>
+<div id="tbl-results-bin-fc" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-results-bin-fc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.7: Model Performance: Presence vs.&nbsp;False Crawl
+</figcaption>
+<div aria-describedby="tbl-results-bin-fc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<style>
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #606060;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #606060;
+    background-color: #d4e3fe;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #606060;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+</style>
+<div class="table_component" role="region" tabindex="0">
+<table>
+<thead>
+<tr>
+<th>
+<center>
+Modeling Approach
+</center>
+</th>
+<th>
+<center>
+Predictor
+</center>
+</th>
+<th>
+<center>
+OR (95% CI)
+</center>
+</th>
+<th>
+<center>
+<em>p</em>-value
+</center>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="2">
+Binary
+</td>
+<td>
+Foreshore Slope
+</td>
+<td>
+1.01 (0.85 - 1.20)<br>
+</td>
+<td>
+0.899
+</td>
+</tr>
+<tr>
+<td>
+Beach Slope
+</td>
+<td>
+0.95 (0.83 - 1.10)
+</td>
+<td>
+0.487<br>
+</td>
+</tr>
+<tr>
+<td rowspan="2">
+Multinomial
+</td>
+<td>
+Foreshore Slope
+</td>
+<td>
+1.01 (0.85 - 1.20)<br>
+</td>
+<td>
+0.914
+</td>
+</tr>
+<tr>
+<td>
+Beach Slope
+</td>
+<td>
+0.95 (0.83 - 1.09)<br>
+</td>
+<td>
+0.490<br>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>Again comparing the two modeling approaches, we see that slopes, confidence intervals, and <em>p</em>-values are similar when comparing observed nests to false crawl points. For foreshore slope, the adjusted odds ratio under binary logistic is 1.01 (95% CI: 0.85, 1.20; <em>p</em> = 0.899) and is also 1.01 (95% CI: 0.85, 1.20; <em>p</em> = 0.914) under multinomial logistic. Similarly, the adjusted odds ratio for beach slope under binary logistic is 0.95 (95% CI: 0.83, 1.10; <em>p</em> = 0.487) and is 0.95 (95% CI: 0.83, 1.09; <em>p</em> = 0.490) under multinomial logistic.</p>
+<p>The corresponding interpretations are the same between the two models. For a 1 degree increase in foreshore slope, the odds of nesting increase by 1% under both the binary and multinomial logistic models. For a 1 degree increase in beach slope, the odds of nesting decrease by 5% under the binaryand multinomial logistic models.</p>
+</section>
+<section id="model-performance" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="model-performance">Model Performance</h4>
+<p>Confusion matrices were be used to assess the performance of each model. The following measures were calculated for each model: accuracy, sensitivity, specificity, positive predictive value (PPV), and negative predictive value (NPV). <a href="#tbl-performance" class="quarto-xref">Table&nbsp;<span>2.8</span></a> shows the performance measures for each of the four models considered.</p>
+<div id="tbl-performance" class="table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-performance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.8: Model Performance
+</figcaption>
+<div aria-describedby="tbl-performance-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<style>
+.table_component {
+    overflow: auto;
+    width: 100%;
+}
+
+.table_component table {
+    border: 1px solid #606060;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+}
+
+.table_component caption {
+    caption-side: top;
+    text-align: left;
+}
+
+.table_component th {
+    border: 1px solid #606060;
+    background-color: #d4e3fe;
+    color: #000000;
+    padding: 5px;
+}
+
+.table_component td {
+    border: 1px solid #606060;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px;
+}
+</style>
+<center>
+<div class="table_component" role="region" tabindex="0">
+<table>
+<tbody>
+<tr>
+<th rowspan="2">
+</th>
+<th colspan="2">
+<center>
+<strong>Binary</strong>
+</center>
+</th>
+<th colspan="2">
+<center>
+<strong>Multinomial</strong>
+</center>
+</th>
+</tr>
+<tr>
+<th>
+<center>
+<strong>PA</strong>
+</center>
+</th>
+<th>
+<center>
+<strong>FC</strong>
+</center>
+</th>
+<th>
+<center>
+<strong>PA</strong>
+</center>
+</th>
+<th>
+<center>
+<strong>FC</strong>
+</center>
+</th>
+</tr>
+<tr>
+<td>
+Accuracy
+</td>
+<td>
+0.57
+</td>
+<td>
+0.68
+</td>
+<td>
+0.56
+</td>
+<td>
+0.81
+</td>
+</tr>
+<tr>
+<td>
+Sensitivity
+</td>
+<td>
+0.55
+</td>
+<td>
+–
+</td>
+<td>
+0.65
+</td>
+<td>
+0.00
+</td>
+</tr>
+<tr>
+<td>
+Specificity
+</td>
+<td>
+0.58
+</td>
+<td>
+0.68
+</td>
+<td>
+0.50
+</td>
+<td>
+1.00
+</td>
+</tr>
+<tr>
+<td>
+PPN
+</td>
+<td>
+0.65
+</td>
+<td>
+0.00
+</td>
+<td>
+0.46
+</td>
+<td>
+–
+</td>
+</tr>
+<tr>
+<td>
+NPV
+</td>
+<td>
+0.48
+</td>
+<td>
+1.00
+</td>
+<td>
+0.68
+</td>
+<td>
+0.81
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+</div>
+</figure>
+</div>
+<p>We see that the binary model accurately categorized 57% of the pseudo absence points and 68% of the false crawl points. The sensitivity shows that the binary model is correctly identifying 55% of pseudo absence points, however, the model never categorized an observation as a false crawl. Therefore, we cannot compute sensitivity when comparing present nests to false crawl. The specificity shows the model correctly identifies observations as pseudo absence 58% of the time and false crawl 68% of the time. The positive predictive value shows that out of what was categorized as pseudo absence points, 65% were actually pseudo absence points and 0% were actually false crawl points. For the negative predictive value, the model correctly identifying observed nests 48% of the time when compared to pseudo absence points and 100% of the time when compared to false crawl points.</p>
+<p>The results of the multinomial logistic regression are somewhat similar to those of the binary logistic regression. Like before, when false crawl is the reference group of the outcome, the model never predicts an observation is a false crawl.</p>
+<p>The multinomial model accurately categorized 56% of the pseudo absence points and 81% of the false crawl points. The sensitivity shows that the multinomial model is correctly identifying 65% of pseudo absence points, however, the model never categorized an observation as a false crawl, making the sensitivity 0%. The specificity shows the model correctly identifies observations as pseudo absence 50% of the time and false crawl 100% of the time. The positive predictive value shows that out of what was categorized as pseudo absence points, 46% were actually pseudo absence points; because no nests were categorized as false crawls, the positive predictive value cannot be computed. For the negative predictive value, the model correctly identified nests 68% of the time when comparing against pseudo absence points and 81% of the time when compared to false crawl points.</p>
+</section>
+</section>
+<section id="model-visualization" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="model-visualization"><span class="header-section-number">2.3.4</span> Model Visualization</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="chapter2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Model Visualization: Probability of Nesting vs.&nbsp;Foreshore Slope</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>In the above data visualization, the binary logistic regression models are represented as the thick black lines. The multinomial logistic regression models are the thin blue and green lines overlaid. As can be seen, the resulting models are not different in a meaningful way. While the models aren’t exactly the same, the predicted probabilities are very similar between the two modeling approaches. This further supports the findings from the model results and performance measures that both modeling approaches yield similar results.</p>
+
+
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-Kutner2004" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Kutner MH, Nachtsheim CJ, Neter J. Applied linear regression models. 4th ed. McGraw-Hill/Irwin; 2004. </div>
+</div>
+<div id="ref-Agresti2007" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Agresti A. An introduction to categorical data analysis. 2nd ed. Hoboken, NJ, USA: Wiley-Interscience; 2007. </div>
+</div>
+<div id="ref-James2013" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">James G, Witten D, Hastie T, Tibshirani R. An introduction to statistical learning: With applications in r [Internet]. Springer; 2013. (Springer texts in statistics). Available from: <a href="https://faculty.marshall.usc.edu/gareth-james/ISL/">https://faculty.marshall.usc.edu/gareth-james/ISL/</a></div>
+</div>
+<div id="ref-Agresti2015" class="csl-entry" role="listitem">
+<div class="csl-left-margin">4. </div><div class="csl-right-inline">Agresti A. Foundations of linear and generalized linear models. 1st ed. Hoboken, NJ, USA: John Wiley &amp; Sons; 2015. (Wiley series in probability and statistics). </div>
+</div>
+<div id="ref-Rcore" class="csl-entry" role="listitem">
+<div class="csl-left-margin">5. </div><div class="csl-right-inline">R Core Team. R: A language and environment for statistical computing [Internet]. Vienna, Austria: R Foundation for Statistical Computing; 2025. Available from: <a href="https://www.R-project.org/">https://www.R-project.org/</a></div>
+</div>
+<div id="ref-tidyverse" class="csl-entry" role="listitem">
+<div class="csl-left-margin">6. </div><div class="csl-right-inline">Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, et al. <a href="https://doi.org/10.21105/joss.01686">Welcome to the <span class="nocase">tidyverse</span></a>. Journal of Open Source Software. 2019;4(43):1686. </div>
+</div>
+<div id="ref-nnet" class="csl-entry" role="listitem">
+<div class="csl-left-margin">7. </div><div class="csl-right-inline">Venables WN, Ripley BD. Modern applied statistics with s [Internet]. Fourth. New York: Springer; 2002. Available from: <a href="https://www.stats.ox.ac.uk/pub/MASS4/">https://www.stats.ox.ac.uk/pub/MASS4/</a></div>
+</div>
+<div id="ref-caret" class="csl-entry" role="listitem">
+<div class="csl-left-margin">8. </div><div class="csl-right-inline">Kuhn, Max. Building predictive models in r using the caret package. Journal of Statistical Software [Internet]. 2008;28(5):1–26. Available from: <a href="https://www.jstatsoft.org/index.php/jss/article/view/v028i05">https://www.jstatsoft.org/index.php/jss/article/view/v028i05</a></div>
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter1.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter3.html" class="pagination-link" aria-label="Conclusions">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conclusions</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
