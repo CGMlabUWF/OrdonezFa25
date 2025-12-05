@@ -460,12 +460,12 @@ z_0 = \frac{\hat\beta_i}{\text{SE}_{\beta_i}} ,
 <li><span class="math inline">\(x_2\)</span> = foreshore slope.</li>
 </ul>
 <p>Multinomial logistic regression was used to model all three possible outcome categories simultaenously. Again, we compared presence points against pseudo absence points and, simultaneously, presence points against false crawl points. Mathematically, we simultaneously estimated the following two models:</p>
-<!-- $$ -->
-<!-- \begin{align*} -->
-<!-- \ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{PA}}}\right) &= \hat\beta_0 + \hat\beta_1 x_1 + \hat\beta_2  x_2  + \hat\beta_3  x_1 x_2, \\ -->
-<!-- \ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{FC}}}\right) &= \hat\beta_0 + \hat\beta_1 x_1 + \hat\beta_2  x_2  + \hat\beta_3  x_1 x_2, -->
-<!-- \end{align*} -->
-<!-- $$ {#eq-bin-pa-model} -->
+<p><span id="eq-bin-pa-model"><span class="math display">\[
+\begin{aligned}
+\ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{PA}}}\right) &amp;= \hat\beta_0 + \hat\beta_1 x_1 + \hat\beta_2  x_2  + \hat\beta_3  x_1 x_2, \\
+\ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{FC}}}\right) &amp;= \hat\beta_0 + \hat\beta_1 x_1 + \hat\beta_2  x_2  + \hat\beta_3  x_1 x_2,
+\end{aligned}
+\tag{2.15}\]</span></span></p>
 <p>where</p>
 <ul>
 <li><span class="math inline">\(\hat\pi_{\text{P}}\)</span> = probability of presence,</li>
@@ -489,7 +489,7 @@ z_0 = \frac{\hat\beta_i}{\text{SE}_{\beta_i}} ,
 <p>Modeling the probability of the presence of a nest (1) versus a false crawl (0), we looked at nest status as a function of beach slope, foreshore slope and the interaction between beach slope and foreshore slope. The model produced was:</p>
 <p><span id="eq-bin-fc-int"><span class="math display">\[
 \ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{FC}}} \right) = 0.61 + 0.016 x_1 + 0.046 x_2 - 0.0079x_1 x_2,
-\tag{2.15}\]</span></span></p>
+\tag{2.16}\]</span></span></p>
 <p>where</p>
 <ul>
 <li><span class="math inline">\(\hat\pi_{\text{P}}\)</span> = probability of presence,</li>
@@ -501,7 +501,7 @@ z_0 = \frac{\hat\beta_i}{\text{SE}_{\beta_i}} ,
 <p>Because the interaction between beach slope and foreshore slope was not significant, removed the interaction from the model for parcimony and interpretability. The model without the interaction term was:</p>
 <p><span id="eq-bin-fc-me"><span class="math display">\[
 \ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{FC}}} \right) = 0.88 + 0.049 x_1 + 0.011 x_2,
-\tag{2.16}\]</span></span></p>
+\tag{2.17}\]</span></span></p>
 <p>where</p>
 <ul>
 <li><span class="math inline">\(\hat\pi_{\text{P}}\)</span> = probability of presence,</li>
@@ -514,7 +514,7 @@ z_0 = \frac{\hat\beta_i}{\text{SE}_{\beta_i}} ,
 <p>For the probability of the presence of a nest (1) versus a pseudo absence (0) we also considered the interaction model where nest status was modeled as a function of beach slope, foreshore slope and the interaction between beach slope and foreshore slope. The model produced was:</p>
 <p><span id="eq-bin-pa-int"><span class="math display">\[
 \ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{PA}}} \right) = 0.34 + 0.013 x_1 + 0.009 x_2 - 0.0001 x_1 x_2,
-\tag{2.17}\]</span></span></p>
+\tag{2.18}\]</span></span></p>
 <p>where</p>
 <ul>
 <li><span class="math inline">\(\hat\pi_{\text{P}}\)</span> = probability of presence,</li>
@@ -526,7 +526,7 @@ z_0 = \frac{\hat\beta_i}{\text{SE}_{\beta_i}} ,
 <p>The interaction between beach slope and foreshore slope was again not significant (<span class="math inline">\(p &gt; 0.05\)</span>), it was removed for parcimony. The model without the interaction term was:</p>
 <p><span id="eq-bin-pa-me"><span class="math display">\[
 \ln \left( \frac{\hat\pi_{\text{P}}}{\hat{\pi}_{\text{PA}}} \right) = 0.31 + 0.022 x_1 + 0.013 x_2
-\tag{2.18}\]</span></span> where</p>
+\tag{2.19}\]</span></span> where</p>
 <ul>
 <li><span class="math inline">\(\hat\pi_{\text{P}}\)</span> = probability of presence,</li>
 <li><span class="math inline">\(\hat\pi_{\text{FC}}\)</span> = probability of false crawl,</li>
@@ -550,21 +550,21 @@ z_0 = \frac{\hat\beta_i}{\text{SE}_{\beta_i}} ,
 <section id="multinomial-logistic-regression-1" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="multinomial-logistic-regression-1">Multinomial Logistic Regression</h4>
 <p>For multinomial logistical regression models we looked at the same model structures, but with the model accounting for all three possible outcomes simultaneously. First looking at the models including the interation between beach slope and foreshore slope:</p>
-<!-- $$ -->
-<!-- \begin{align*} -->
-<!-- \ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{PA}}} \right) &= -0.569 + 0.029x_1 + 0.026x_2 + 0.007x_1x_2 \\ -->
-<!-- \ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{FC}}} \right) &= \ \ \ 0.637 + 0.008x_1 + 0.041x_2-0.007x_1 x_2 -->
-<!-- \end{align*} -->
-<!-- $$ {#eq-mult-int} -->
+<p><span id="eq-mult-int"><span class="math display">\[
+\begin{aligned}
+\ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{PA}}} \right) &amp;= -0.569 + 0.029x_1 + 0.026x_2 + 0.007x_1x_2 \\
+\ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{FC}}} \right) &amp;= \ \ \ 0.637 + 0.008x_1 + 0.041x_2-0.007x_1 x_2
+\end{aligned}
+\tag{2.20}\]</span></span></p>
 <!-- These results reveal that for a 1 meter increase in the beach slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by $e$^0.029^ = 1.03, indicating a 3% increase in odds. For a 1 meter increase in foreshore slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by $e$^0.026^ = 1.027, which shows a 2.7% increase in odds. Lastly, for a 1 meter increase in the interaction between beach slope and foreshore slope, as compared to a pseudo absence, the odds of a nest being present are multiplied by $e$^0.007^ = 1.007, indicating a 0.7% increase. -->
 <!-- These results indicate that for a 1 meter increase in the beach slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by $e$^0.008^ = 1.01, a 1% increase in odds. For a 1 meter increase in foreshore slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by $e$^0.041^ = 1.04, a 4% increase. Lastly, for a 1 meter increase in the interaction between beach slope and foreshore slope, as compared to a pseudo absence, the odds of a nest being present are multiplied by $e$^-0.007^ = 0.993, a 0.7% decrease in the odds of a nest being present. -->
 <p>As in the binary logistic regression models, the interaction between beach slope and foreshore slope was not significant (<span class="math inline">\(p &gt; 0.05\)</span>). The interaction term was removed for parcimony, resulting in the following models:</p>
-<!-- $$ -->
-<!-- \begin{align*} -->
-<!-- \ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{PA}}} \right) &= -0.759 + 0.088x_1 + 0.051x_2  \\ -->
-<!-- \ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{FC}}} \right) &= \ \ \ 0.890 + 0.048x_1 + 0.010x_2 -->
-<!-- \end{align*} -->
-<!-- $$ {#eq-mult-me} -->
+<p><span id="eq-mult-me"><span class="math display">\[
+\begin{aligned}
+\ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{PA}}} \right) &amp;= -0.759 + 0.088x_1 + 0.051x_2  \\
+\ln \left( \frac{\hat\pi_{\text{P}}}{\hat\pi_{\text{FC}}} \right) &amp;= \ \ \ 0.890 + 0.048x_1 + 0.010x_2
+\end{aligned}
+\tag{2.21}\]</span></span></p>
 <p>In the first model, with pseudo-absence points as the reference category, we see that for a 1 degree increase in the beach slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by <span class="math inline">\(e^{0.088} = 1.09\)</span>, indicating a 9% increase in odds. For a 1 degree increase in foreshore slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by <span class="math inline">\(e^{0.051} = 1.05\)</span>, which shows a 5% increase in odds.</p>
 <p>In the second model, with false crawl points as the reference category, we see that for a 1 degree increase in the beach slope, the odds of a nest being present, as compared to a false crawl, are multiplied by <span class="math inline">\(e\)</span><sup>0.048</sup> = 0.95, indicating a 5% decrease in odds. For a 1 degree increase in foreshore slope, the odds of a nest being present, as compared to a pseudo absence, are multiplied by <span class="math inline">\(e\)</span><sup>0.0095</sup> = 1.01, which shows a 1% increase in odds.</p>
 <!-- Next, with pseudo absence as the reference category, we looked at nest status as a function of beach slope. The resulting model was: -->
