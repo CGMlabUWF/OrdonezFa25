@@ -1524,15 +1524,19 @@ NPV
 <h3 data-number="2.3.4" class="anchored" data-anchor-id="model-visualization"><span class="header-section-number">2.3.4</span> Model Visualization</h3>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="chapter2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Model Visualization: Probability of Nesting vs.&nbsp;Foreshore Slope</figcaption>
+<div id="fig-model-vis" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-model-vis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="chapter2_files/figure-html/fig-model-vis-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-model-vis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Probability of Nesting vs.&nbsp;Foreshore Slope
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>In the above data visualization, the binary logistic regression models are represented as the thick black lines. The multinomial logistic regression models are the thin blue and green lines overlaid. As can be seen, the resulting models are not different in a meaningful way. While the models aren’t exactly the same, the predicted probabilities are very similar between the two modeling approaches. This further supports the findings from the model results and performance measures that both modeling approaches yield similar results.</p>
+<p><a href="#fig-model-vis" class="quarto-xref">Figure&nbsp;<span>2.1</span></a> displays the data and the estimated regression lines. Observed nests are points at the top of the graph (<em>y</em> = 1) and are in UWF Blue while pseudo absence points and false crawl points are at the bottom of the graph (<em>y</em> = 0) and are in Spring Green and Nautilus Blue, respectively. The predicted probabilities from the binary logistic regression models are represented as the thick black lines. The multinomial logistic regression models are the thin lines also in Spring Green, when comparing against pseudo absence points, and in Nautilus Blue when comparing against false crawls. As can be seen, the resulting models are not different in a meaningful way. While the models aren’t exactly the same, the predicted probabilities are very similar between the two modeling approaches. This visually demonstrates our model results: both modeling approaches yield similar results.</p>
 
 
 <div id="refs" class="references csl-bib-body" role="list" style="display: none">
